@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+body {
+  background: #1E555C;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Righteous", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+body #container .main-title {
+  font-size: 40px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #13353a;
+}
+body #container .length-control {
+  width: 250px;
+  margin: 10px;
+}
+body #container .length-control button {
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+body #container .length-control button:hover {
+  transform: scale(1.1);
+}
+body #container .length-control .btn-level,
+body #container .length-control .length-control {
+  display: inline-block;
+}
+body #container .length-control .btn-level .btn-level:nth-child(3),
+body #container .length-control .length-control .btn-level:nth-child(3) {
+  width: 40px;
+}
+body #container .timer {
+  border: 7px solid #13353a;
+  margin: 20px auto 10px auto;
+  width: 300px;
+  height: 180px;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+body #container .timer .timer-wrapper {
+  position: absolute;
+  width: 220px;
+  height: 130px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+body #container .timer #time-left {
+  font-family: "Digital", sans-serif;
+  font-size: 90px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+body #container .timer .timer-control {
+  margin-top: 20px;
+}
+body #container .timer .timer-control button {
+  margin: 0 10px;
+}
+body #container .timer .timer-control button:active {
+  color: #13353a;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 20px;
+  }
+
+  #container {
+    transform: scale(0.8);
+  }
+}
+.author {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #a50d0d;
+}

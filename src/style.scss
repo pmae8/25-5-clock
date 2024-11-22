@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+// Variables (for easier customization)
+$primary-color: #1E555C; // Teal background
+$secondary-color: #13353a; // Darker teal for accents
+$accent-color: #a50d0d; // Red for warnings and author
+$timer-border-width: 7px; 
+$timer-border-radius: 50px;
+$font-family-main: 'Righteous', sans-serif;
+$font-family-digital: 'Digital', sans-serif; 
+$font-family-author: 'Share Tech Mono', monospace;
+
+body {
+  background: $primary-color;
+  color: white;
+  font-size: 24px; // Slightly smaller font size
+  text-align: center;
+  font-family: $font-family-main; 
+  display: flex;
+  flex-direction: column; // Align items vertically
+  min-height: 100vh; // Ensure full viewport height
+  align-items: center;
+  justify-content: center; 
+
+  #container {
+    // Removed flexbox properties as they are now on the body
+    .main-title {
+      font-size: 40px; 
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px $secondary-color; // Add a subtle shadow
+    }
+
+    .length-control {
+      width: 250px;
+      margin: 10px; // Add spacing between controls
+
+      button {
+        background: none;
+        outline: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s ease; // Smooth transition for hover effect
+
+        &:hover {
+          transform: scale(1.1); // Scale up on hover
+        }
+      }
+
+      .btn-level,
+      .length-control {
+        display: inline-block;
+
+        .btn-level:nth-child(3) {
+          width: 40px;
+        }
+      }
+    }
+
+    .timer {
+      border: $timer-border-width solid $secondary-color;
+      margin: 20px auto 10px auto;
+      width: 300px;
+      height: 180px;
+      border-radius: $timer-border-radius;
+      position: relative;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+
+      .timer-wrapper {
+        position: absolute;
+        width: 220px; 
+        height: 130px; 
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #time-left {
+        font-family: $font-family-digital;
+        font-size: 90px; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .timer-control {
+        margin-top: 20px;
+
+        button {
+          margin: 0 10px;
+          &:active {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 20px; 
+  }
+  #container {
+    transform: scale(0.8);
+  }
+}
+
+.author {
+  text-align: center;
+  font-family: $font-family-author;
+  margin-top: 20px;
+  font-size: 14px;
+  color: $accent-color;
+}
